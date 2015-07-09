@@ -1,0 +1,68 @@
+package clear.i_read.fragment;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
+import clear.i_read.R;
+import clear.i_read.activity.EventListActivity;
+
+import com.tyczj.extendedcalendarview.Day;
+import com.tyczj.extendedcalendarview.ExtendedCalendarView;
+import com.tyczj.extendedcalendarview.ExtendedCalendarView.OnDayClickListener;
+
+/**
+ * A placeholder fragment containing a simple view.
+ */
+public class CalendarholderFragment extends Fragment implements OnDayClickListener{
+    /**
+     * The fragment argument representing the section number for this
+     * fragment.
+     */
+    private static final String ARG_SECTION_NUMBER = "section_number";
+
+    /**
+     * Returns a new instance of this fragment for the given section
+     * number.
+     */
+    public static CalendarFragment newInstance(int sectionNumber) {
+        CalendarFragment fragment = new CalendarFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public CalendarholderFragment() {
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.calendar_main, container, false);
+        ExtendedCalendarView calender = (ExtendedCalendarView) rootView.findViewById(R.id.calendar);
+        calender.setOnDayClickListener(this);
+        return rootView;
+    }
+
+    @Override
+    public void onDayClicked(AdapterView<?> adapter, View view, int position,
+            long id, Day day) {
+
+        //if(day.getNumOfEvenets() > 0) {
+        
+            
+            // 遷移先のactivityを指定してintentを作成
+            Intent intent = new Intent(getActivity(), EventListActivity.class);
+
+            // intentへ添え字付で値を保持させる
+            intent.putExtra("events", day.getEvents());
+            // 指定のActivityを開始する
+            startActivity(intent);
+            
+        //}
+    }
+}

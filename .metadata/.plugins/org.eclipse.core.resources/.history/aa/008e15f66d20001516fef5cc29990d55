@@ -1,0 +1,49 @@
+package clear.i_read.fragment;
+
+import jp.ogwork.camerafragment.camera.CameraFragment;
+import android.hardware.Camera;
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import clear.i_read.R;
+
+public class CameraholderFragment extends Fragment {
+	
+	/**
+     * The fragment argument representing the section number for this
+     * fragment.
+     */
+    private static final String ARG_SECTION_NUMBER = "section_number";
+
+    /**
+     * Returns a new instance of this fragment for the given section
+     * number.
+     */
+    public static ShotFragment newInstance(int sectionNumber) {
+    	ShotFragment fragment = new ShotFragment();
+        Bundle args = new Bundle();
+        args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    public CameraholderFragment() {
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+            Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.camera_main, container, false);
+        CameraFragment cf = new CameraFragment();
+		Bundle args = new Bundle();
+		args.putInt(CameraFragment.BUNDLE_KEY_CAMERA_FACING, Camera.CameraInfo.CAMERA_FACING_BACK);
+		cf.setArguments(args);
+		
+        getChildFragmentManager().beginTransaction().add(R.id.fl_camera, cf).commit();
+        
+        return rootView;
+    }
+	
+}
