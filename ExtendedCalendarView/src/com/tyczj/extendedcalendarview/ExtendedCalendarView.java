@@ -9,6 +9,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.GestureDetector;
 import android.view.GestureDetector.SimpleOnGestureListener;
 import android.view.MotionEvent;
@@ -199,7 +200,7 @@ public class ExtendedCalendarView extends RelativeLayout implements OnItemClickL
 		}
 	}
 	
-	private void previousMonth(){
+	public void previousMonth(){
 		if(cal.get(Calendar.MONTH) == cal.getActualMinimum(Calendar.MONTH)) {				
 			cal.set((cal.get(Calendar.YEAR)-1),cal.getActualMaximum(Calendar.MONTH),1);
 		} else {
@@ -208,7 +209,7 @@ public class ExtendedCalendarView extends RelativeLayout implements OnItemClickL
 		rebuildCalendar();
 	}
 	
-	private void nextMonth(){
+	public void nextMonth(){
 		if(cal.get(Calendar.MONTH) == cal.getActualMaximum(Calendar.MONTH)) {				
 			cal.set((cal.get(Calendar.YEAR)+1),cal.getActualMinimum(Calendar.MONTH),1);
 		} else {
@@ -228,8 +229,17 @@ public class ExtendedCalendarView extends RelativeLayout implements OnItemClickL
 	 * Refreshes the month
 	 */
 	public void refreshCalendar(){
+		Log.d("","■■■■■ ExtendedCalendarView#refreshCalendar start ■■■■");
+
+		mAdapter = new CalendarAdapter(context,cal);
+		calendar.setAdapter(mAdapter);
+		
 		mAdapter.refreshDays();
 		mAdapter.notifyDataSetChanged();
+		
+		calendar.setAdapter(mAdapter);
+
+		Log.d("","■■■■■ ExtendedCalendarView#refreshCalendar end ■■■■");
 	}
 	
 	/**

@@ -48,4 +48,8 @@ public class CalendarFragment extends Fragment implements OnDayClickListener {
 
 		}
 	}
+
+	public void refresh() {
+		calender.refreshCalendar();
+	}
 }

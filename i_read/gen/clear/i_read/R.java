@@ -2150,6 +2150,7 @@ containing a value of this type.
         public static final int select_dialog_singlechoice_material=0x7f03002c;
         public static final int shot_main=0x7f03002d;
         public static final int support_simple_spinner_dropdown_item=0x7f03002e;
+        public static final int tab1_fragment=0x7f03002f;
     }
     public static final class menu {
         public static final int main=0x7f0c0000;

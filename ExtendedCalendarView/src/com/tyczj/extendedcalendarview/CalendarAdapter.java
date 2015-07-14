@@ -9,6 +9,7 @@ import java.util.concurrent.TimeUnit;
 
 import android.content.Context;
 import android.text.format.Time;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -180,6 +181,9 @@ public class CalendarAdapter extends BaseAdapter{
 	
 	public void refreshDays()
     {
+		
+		Log.d("", "■■■■　CalendarAdapter#refreshDays");
+		
     	// clear items
     	dayList.clear();
     	
@@ -229,6 +233,9 @@ public class CalendarAdapter extends BaseAdapter{
         	Calendar cTemp = Calendar.getInstance();
         	cTemp.set(year, month, dayNumber);
         	int startDay = Time.getJulianDay(cTemp.getTimeInMillis(), TimeUnit.MILLISECONDS.toSeconds(tz.getOffset(cTemp.getTimeInMillis())));
+        	
+        	
+        	Log.d("", "■■■■　CalendarAdapter#setStartDay -> " + startDay);
         	
         	d.setAdapter(this);
         	d.setStartDay(startDay);
