@@ -1,0 +1,12 @@
+<resources>
+
+    <string name="app_name">ExtendedCalendarView</string>
+    <string name="monday">げつ</string>
+    <string name="tuesday">か</string>
+    <string name="wednesday">すい</string>
+    <string name="thursday">もく</string>
+    <string name="friday">きん</string>
+    <string name="saturday">ど</string>
+    <string name="sunday">にち</string>
+
+</resources>
