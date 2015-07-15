@@ -91,7 +91,8 @@ public class ExtendedCalendarView extends RelativeLayout implements OnItemClickL
 		month.setId(2);
 		month.setLayoutParams(params);
 		month.setTextAppearance(context, android.R.attr.textAppearanceLarge);
-		month.setText(cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())+" "+cal.get(Calendar.YEAR));
+		//month.setText(cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())+" "+cal.get(Calendar.YEAR));
+		month.setText(getCalDisplayName());
 		month.setTextSize(25);
 		
 		base.addView(month);
@@ -220,26 +221,23 @@ public class ExtendedCalendarView extends RelativeLayout implements OnItemClickL
 	
 	private void rebuildCalendar(){
 		if(month != null){
-			month.setText(cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())+" "+cal.get(Calendar.YEAR));
+			//month.setText(cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())+" "+cal.get(Calendar.YEAR));
+			month.setText(getCalDisplayName());
 			refreshCalendar();
 		}
+	}
+	
+	private String getCalDisplayName() {		
+		//return cal.getDisplayName(Calendar.MONTH, Calendar.LONG, Locale.getDefault())+" "+cal.get(Calendar.YEAR);
+		return cal.get(Calendar.YEAR) +"ねん " + (cal.get(Calendar.MONTH) + 1) + "がつ";
 	}
 	
 	/**
 	 * Refreshes the month
 	 */
 	public void refreshCalendar(){
-		Log.d("","■■■■■ ExtendedCalendarView#refreshCalendar start ■■■■");
-
-		mAdapter = new CalendarAdapter(context,cal);
-		calendar.setAdapter(mAdapter);
-		
 		mAdapter.refreshDays();
 		mAdapter.notifyDataSetChanged();
-		
-		calendar.setAdapter(mAdapter);
-
-		Log.d("","■■■■■ ExtendedCalendarView#refreshCalendar end ■■■■");
 	}
 	
 	/**

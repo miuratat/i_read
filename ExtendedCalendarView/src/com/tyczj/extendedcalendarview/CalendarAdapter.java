@@ -181,9 +181,6 @@ public class CalendarAdapter extends BaseAdapter{
 	
 	public void refreshDays()
     {
-		
-		Log.d("", "■■■■　CalendarAdapter#refreshDays");
-		
     	// clear items
     	dayList.clear();
     	
@@ -233,9 +230,6 @@ public class CalendarAdapter extends BaseAdapter{
         	Calendar cTemp = Calendar.getInstance();
         	cTemp.set(year, month, dayNumber);
         	int startDay = Time.getJulianDay(cTemp.getTimeInMillis(), TimeUnit.MILLISECONDS.toSeconds(tz.getOffset(cTemp.getTimeInMillis())));
-        	
-        	
-        	Log.d("", "■■■■　CalendarAdapter#setStartDay -> " + startDay);
         	
         	d.setAdapter(this);
         	d.setStartDay(startDay);

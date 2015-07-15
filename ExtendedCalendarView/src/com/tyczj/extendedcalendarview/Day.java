@@ -77,9 +77,6 @@ public class Day{
 	 * @param startDay
 	 */
 	public void setStartDay(int startDay){
-		
-		Log.d("", "■■■■■　Day#setStartDay ->" + startDay);
-		
 		this.startDay = startDay;
 		new GetEvents().execute();
 	}
@@ -124,8 +121,6 @@ public class Day{
 		@Override
 		protected Void doInBackground(Void... params) {
 
-			Log.d("","■■■■■ Day#doInBackground >>> " + startDay);
-
 			Cursor c = context.getContentResolver().query(CalendarProvider.CONTENT_URI,
 					new String[] {
 							CalendarProvider.ID,CalendarProvider.EVENT,
@@ -159,7 +154,6 @@ public class Day{
 		}
 		
 		protected void onPostExecute(Void par){
-			Log.d("","■■■■■ Day#onPostExecute ■■■■");
 			adapter.notifyDataSetChanged();
 		}
 		
