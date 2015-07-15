@@ -1,5 +1,6 @@
 package clear.i_read.fragment;
 
+import java.io.IOException;
 import java.util.List;
 
 import jp.ogwork.camerafragment.camera.CameraFragment;
@@ -13,7 +14,6 @@ import android.hardware.Camera.Size;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -22,9 +22,9 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import clear.i_read.R;
-import clear.i_read.activity.EventActivity;
 import clear.i_read.activity.MainActivity;
 import clear.i_read.activity.ReviewActivity;
+import clear.i_read.util.BitmapResizer;
 
 @SuppressWarnings("deprecation")
 public class ShotFragment extends Fragment {
@@ -154,10 +154,22 @@ public class ShotFragment extends Fragment {
 
 			@Override
 			public void onPictureTaken(Bitmap bitmap, Camera camera) {
+				BitmapResizer bitmapResizer = new BitmapResizer(getActivity());
 
-				Intent intent = new Intent(getActivity(), ReviewActivity.class);
-				intent.putExtra("photo", bitmap);
-				startActivityForResult(intent, REVIEW_ACTIVITY);
+				Bitmap photo;
+				try {
+					photo = bitmapResizer.resize(bitmap,200,200);
+					
+					Intent intent = new Intent(getActivity(), ReviewActivity.class);
+					intent.putExtra("photo", photo);
+					startActivityForResult(intent, REVIEW_ACTIVITY);
+					
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
+				
 			}
 		});
 	}
@@ -168,7 +180,8 @@ public class ShotFragment extends Fragment {
 
 		if (requestCode == REVIEW_ACTIVITY) {
 			if (resultCode == android.app.Activity.RESULT_OK) {
-				ActionBar actionBar = ((MainActivity)getActivity()).getSupportActionBar();
+				ActionBar actionBar = ((MainActivity) getActivity())
+						.getSupportActionBar();
 				actionBar.getTabAt(0).select();
 			}
 		}

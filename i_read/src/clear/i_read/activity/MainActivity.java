@@ -12,6 +12,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import clear.i_read.R;
+import clear.i_read.fragment.CalendarFragment;
+import clear.i_read.fragment.ShotFragment;
 
 @SuppressWarnings("deprecation")
 public class MainActivity extends ActionBarActivity  {
@@ -42,17 +44,15 @@ public class MainActivity extends ActionBarActivity  {
         
         actionBar.setDisplayShowTitleEnabled(false);
         
-        Fragment fragment1 = new Fragment1();
         ActionBar.Tab tab1 = actionBar.newTab();
         tab1.setText("カレンダー"); // タイトル文字列
-        tab1.setTabListener(new MyTabListener(this, "f1", Fragment1.class)); // リスナー
+        tab1.setTabListener(new MyTabListener(this, "f1", CalendarFragment.class)); // リスナー
         actionBar.addTab(tab1);
         
         
-        Fragment fragment2 = new Fragment2();
         ActionBar.Tab tab2 = actionBar.newTab();
         tab2.setText("カメラ"); // タイトル文字列
-        tab2.setTabListener(new MyTabListener(this, "f2", Fragment2.class)); // リスナー
+        tab2.setTabListener(new MyTabListener(this, "f2", ShotFragment.class)); // リスナー
         actionBar.addTab(tab2);
        
     }
@@ -76,7 +76,7 @@ public class MainActivity extends ActionBarActivity  {
             // タブが選択された時の処理
             // フラグメントを追加する
         	fragment = Fragment.instantiate(activity, cls.getName());
-            ft.replace(R.id.pager, fragment, null);
+            ft.replace(R.id.container, fragment, null);
         }
 
         @Override
