@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import clear.i_read.R;
 import clear.i_read.fragment.CalendarFragment;
+import clear.i_read.fragment.PrizeFragment;
 import clear.i_read.fragment.ShotFragment;
 
 @SuppressWarnings("deprecation")
@@ -38,6 +39,11 @@ public class MainActivity extends ActionBarActivity  {
         tab2.setText("カメラ");
         tab2.setTabListener(new MyTabListener(this, ShotFragment.class));
         actionBar.addTab(tab2);
+        
+        ActionBar.Tab tab3 = actionBar.newTab();
+        tab3.setText("シール");
+        tab3.setTabListener(new MyTabListener(this, PrizeFragment.class));
+        actionBar.addTab(tab3);
        
     }
 

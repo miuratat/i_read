@@ -71,7 +71,7 @@ public class ReviewFragment extends Fragment {
 	private void save(int review) {
 
 		ContentValues values = new ContentValues();
-		values.put(CalendarProvider.COLOR, Event.COLOR_GREEN);
+		values.put(CalendarProvider.COLOR, Event.COLOR_RED);
 		values.put(CalendarProvider.DESCRIPTION, review == 1 ? "good" : "bad");
 		values.put(CalendarProvider.LOCATION, "Some location");
 		values.put(CalendarProvider.EVENT, "Event name");
