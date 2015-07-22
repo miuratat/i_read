@@ -51,10 +51,8 @@ public class ShotFragment extends Fragment {
 
 						@Override
 						public void onGlobalLayout() {
-							fl_camera.getViewTreeObserver()
-									.removeGlobalOnLayoutListener(this);
-							addCameraFragment(fl_camera.getWidth(),
-									fl_camera.getHeight(), R.id.fl_camera);
+							fl_camera.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+							addCameraFragment(fl_camera.getWidth(), fl_camera.getHeight(), R.id.fl_camera);
 						}
 					});
 		}
@@ -83,29 +81,24 @@ public class ShotFragment extends Fragment {
 
 		cameraFragment = new CameraFragment();
 		Bundle args = new Bundle();
-		args.putInt(CameraFragment.BUNDLE_KEY_CAMERA_FACING,
-				Camera.CameraInfo.CAMERA_FACING_BACK);
+		args.putInt(CameraFragment.BUNDLE_KEY_CAMERA_FACING,Camera.CameraInfo.CAMERA_FACING_BACK);
 		cameraFragment.setArguments(args);
 
 		/** プレビューサイズリスナの設定 */
-		cameraFragment
-				.setOnPreviewSizeChangeListener(new OnPreviewSizeChangeListener() {
+		cameraFragment.setOnPreviewSizeChangeListener(new OnPreviewSizeChangeListener() {
 
 					/** サイズ変更前 */
 					@Override
-					public Size onPreviewSizeChange(
-							List<Size> supportedPreviewSizeList) {
+					public Size onPreviewSizeChange(List<Size> supportedPreviewSizeList) {
 						return cameraFragment.choosePreviewSize(
-								supportedPreviewSizeList, 0, 0, viewWidth,
-								viewHeight);
+								supportedPreviewSizeList, 0, 0, viewWidth,viewHeight);
 					}
 
 					/** サイズ変更後 */
 					@Override
 					public void onPreviewSizeChanged(Size previewSize) {
 
-						float viewAspectRatio = (float) viewHeight
-								/ previewSize.width;
+						float viewAspectRatio = (float) viewHeight / previewSize.width;
 						int height = viewHeight;
 						int width = (int) (viewAspectRatio * previewSize.height);
 
@@ -129,15 +122,11 @@ public class ShotFragment extends Fragment {
 					public Size onPictureSizeChange(
 							List<Size> supportedPictureSizeList) {
 						/** 画面横幅以下の中で最大サイズを選ぶ */
-						return cameraFragment.choosePictureSize(
-								supportedPictureSizeList, 0, 0, viewWidth,
-								viewHeight);
+						return cameraFragment.choosePictureSize(supportedPictureSizeList, 0, 0, viewWidth, viewHeight);
 					}
 				});
 
-		getFragmentManager().beginTransaction()
-				.add(containerViewId, cameraFragment, TAG_CAMERA_FRAGMENT)
-				.commit();
+		getFragmentManager().beginTransaction().add(containerViewId, cameraFragment, TAG_CAMERA_FRAGMENT).commit();
 	}
 
 	/***
@@ -165,11 +154,9 @@ public class ShotFragment extends Fragment {
 					startActivityForResult(intent, REVIEW_ACTIVITY);
 					
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 
-				
 			}
 		});
 	}
@@ -180,8 +167,7 @@ public class ShotFragment extends Fragment {
 
 		if (requestCode == REVIEW_ACTIVITY) {
 			if (resultCode == android.app.Activity.RESULT_OK) {
-				ActionBar actionBar = ((MainActivity) getActivity())
-						.getSupportActionBar();
+				ActionBar actionBar = ((MainActivity) getActivity()).getSupportActionBar();
 				actionBar.getTabAt(0).select();
 			}
 		}
