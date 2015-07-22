@@ -38,7 +38,7 @@ public class EventFragment extends Fragment {
 			LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.card, null);
 			CardView cardView = (CardView) linearLayout.findViewById(R.id.cardView);
 			
-			TextView textBox = (TextView) linearLayout.findViewById(R.id.textBox);
+			TextView textBox = (TextView) linearLayout.findViewById(R.id.descriptionTextView);
 			textBox.setText(events.get(i).getTitle());
 			
 			ImageView imageView = (ImageView)linearLayout.findViewById(R.id.photo);
