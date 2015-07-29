@@ -143,6 +143,12 @@ public class ShotFragment extends Fragment {
 
 			@Override
 			public void onPictureTaken(Bitmap bitmap, Camera camera) {
+				
+				Intent intent = new Intent(getActivity(), ReviewActivity.class);
+				intent.putExtra("photo", bitmap);
+				startActivityForResult(intent, REVIEW_ACTIVITY);
+				
+				/*
 				BitmapResizer bitmapResizer = new BitmapResizer(getActivity());
 
 				Bitmap photo;
@@ -155,7 +161,7 @@ public class ShotFragment extends Fragment {
 					
 				} catch (IOException e) {
 					e.printStackTrace();
-				}
+				}*/
 
 			}
 		});

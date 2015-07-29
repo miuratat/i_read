@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="jp.ogwork.camerafragment.camera.CameraFragment"/>
+<fullyQualifiedTypeName name="clear.i_read.MainActivity.CameraholderFragment"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
+<fullyQualifiedTypeName name="clear.i_read.activity.EventListActivity"/>
+<fullyQualifiedTypeName name="android.hardware.Camera.Size"/>
+<fullyQualifiedTypeName name="clear.i_read.adapter.EventAdapter"/>
+<fullyQualifiedTypeName name="clear.i_read.R.id"/>
+<fullyQualifiedTypeName name="java.sql.Time"/>
+<fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
+<fullyQualifiedTypeName name="android.text.format.Time"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapFactory"/>
+<fullyQualifiedTypeName name="java.io.ByteArrayOutputStream"/>
+<fullyQualifiedTypeName name="android.support.v7.app.ActionBarActivity"/>
+<fullyQualifiedTypeName name="clear.i_read.activity.MainActivity"/>
+<fullyQualifiedTypeName name="android.support.v7.app.ActionBar"/>
+<fullyQualifiedTypeName name="clear.i_read.activity.ReviewActivity"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="android.support.v7.app.ActionBar.Tab"/>
+<fullyQualifiedTypeName name="clear.i_read.fragment.CalendarFragment"/>
+<fullyQualifiedTypeName name="clear.i_read.fragment.ShotFragment"/>
+<fullyQualifiedTypeName name="clear.i_read.fragment.PrizeFragment"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="com.etsy.android.sample.SampleAdapter"/>
+<fullyQualifiedTypeName name="android.R"/>
+<fullyQualifiedTypeName name="com.etsy.android.sample.R"/>
+<fullyQualifiedTypeName name="android.support.v4.app.FragmentManager"/>
+<fullyQualifiedTypeName name="android.util.Log"/>
+<fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
+<fullyQualifiedTypeName name="clear.i_read.R"/>
+<fullyQualifiedTypeName name="com.tyczj.extendedcalendarview.Event"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
+<fullyQualifiedTypeName name="android.graphics.BitmapRegionDecoder"/>
+<fullyQualifiedTypeName name="android.support.v7.app.AlertDialog"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="clear.i_read.R.drawable"/>
+</qualifiedTypeNameHistroy>
