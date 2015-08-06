@@ -29,11 +29,21 @@
 <fullyQualifiedTypeName name="android.support.v4.app.FragmentManager"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
-<fullyQualifiedTypeName name="clear.i_read.R"/>
 <fullyQualifiedTypeName name="com.tyczj.extendedcalendarview.Event"/>
-<fullyQualifiedTypeName name="android.widget.ImageView"/>
 <fullyQualifiedTypeName name="android.graphics.BitmapRegionDecoder"/>
 <fullyQualifiedTypeName name="android.support.v7.app.AlertDialog"/>
+<fullyQualifiedTypeName name="clear.i_read.R"/>
 <fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="android.support.v7.widget.CardView"/>
+<fullyQualifiedTypeName name="android.content.Context"/>
+<fullyQualifiedTypeName name="android.animation.Animator.AnimatorListener"/>
+<fullyQualifiedTypeName name="clear.i_read.fragment.MyItemAnimator"/>
+<fullyQualifiedTypeName name="android.view.animation.Animation"/>
+<fullyQualifiedTypeName name="android.support.v7.widget.RecyclerView.ItemAnimator"/>
+<fullyQualifiedTypeName name="jp.wasabeef.recyclerview.animators.SlideInLeftAnimator"/>
+<fullyQualifiedTypeName name="jp.wasabeef.recyclerview.animators.SlideInUpAnimator"/>
+<fullyQualifiedTypeName name="jp.wasabeef.recyclerview.animators.adapters.SlideInBottomAnimationAdapter"/>
+<fullyQualifiedTypeName name="android.support.v7.widget.GridLayoutManager"/>
 <fullyQualifiedTypeName name="clear.i_read.R.drawable"/>
+<fullyQualifiedTypeName name="android.widget.ImageView"/>
 </qualifiedTypeNameHistroy>

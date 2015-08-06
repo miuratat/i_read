@@ -8,14 +8,14 @@ package com.tyczj.extendedcalendarview;
 
 public final class R {
 	public static final class color {
-		public static final int date_number_text_color = 0x7f050048;
+		public static final int date_number_text_color = 0x7f080049;
 	}
 	public static final class dimen {
-		public static final int day_margin = 0x7f060004;
-		public static final int first_day_margin = 0x7f060003;
-		public static final int min_cell_height = 0x7f060006;
-		public static final int min_cell_width = 0x7f060007;
-		public static final int text_height_width = 0x7f060005;
+		public static final int day_margin = 0x7f05004a;
+		public static final int first_day_margin = 0x7f050049;
+		public static final int min_cell_height = 0x7f05004c;
+		public static final int min_cell_width = 0x7f05004d;
+		public static final int text_height_width = 0x7f05004b;
 	}
 	public static final class drawable {
 		public static final int blue = 0x7f02003b;
@@ -34,32 +34,32 @@ public final class R {
 		public static final int today = 0x7f020049;
 	}
 	public static final class id {
-		public static final int imageView1 = 0x7f0b0054;
-		public static final int imageView2 = 0x7f0b0056;
-		public static final int imageView3 = 0x7f0b0057;
-		public static final int imageView4 = 0x7f0b0055;
-		public static final int imageView5 = 0x7f0b0058;
-		public static final int imageView6 = 0x7f0b0059;
-		public static final int rl = 0x7f0b0052;
-		public static final int textView1 = 0x7f0b0051;
-		public static final int today_frame = 0x7f0b0053;
+		public static final int imageView1 = 0x7f060055;
+		public static final int imageView2 = 0x7f060057;
+		public static final int imageView3 = 0x7f060058;
+		public static final int imageView4 = 0x7f060056;
+		public static final int imageView5 = 0x7f060059;
+		public static final int imageView6 = 0x7f06005a;
+		public static final int rl = 0x7f060053;
+		public static final int textView1 = 0x7f060052;
+		public static final int today_frame = 0x7f060054;
 	}
 	public static final class layout {
 		public static final int day_of_week = 0x7f03001b;
 		public static final int day_view = 0x7f03001c;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f080000;
-		public static final int friday = 0x7f080005;
-		public static final int monday = 0x7f080001;
-		public static final int saturday = 0x7f080006;
-		public static final int sunday = 0x7f080007;
-		public static final int thursday = 0x7f080004;
-		public static final int tuesday = 0x7f080002;
-		public static final int wednesday = 0x7f080003;
+		public static final int app_name = 0x7f0a0012;
+		public static final int friday = 0x7f0a0017;
+		public static final int monday = 0x7f0a0013;
+		public static final int saturday = 0x7f0a0018;
+		public static final int sunday = 0x7f0a0019;
+		public static final int thursday = 0x7f0a0016;
+		public static final int tuesday = 0x7f0a0014;
+		public static final int wednesday = 0x7f0a0015;
 	}
 	public static final class style {
-		public static final int AppBaseTheme = 0x7f070003;
-		public static final int AppTheme = 0x7f070004;
+		public static final int AppBaseTheme = 0x7f0b0127;
+		public static final int AppTheme = 0x7f0b0128;
 	}
 }

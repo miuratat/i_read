@@ -5,6 +5,7 @@
     <color name="green">#ff8dd304</color>
     <color name="blue">#ff82e0ff</color>
     <color name="yellow">#fffffbae</color>
+    <color name="white">#ffffffff</color>
     <color name="red">#fff10800</color>
     <color name="list_item_pressed">#1A000000</color>
     <color name="description_color">#878787</color>
