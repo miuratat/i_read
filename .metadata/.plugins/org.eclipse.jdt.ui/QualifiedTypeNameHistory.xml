@@ -5,7 +5,6 @@
 <fullyQualifiedTypeName name="android.support.v4.app.FragmentActivity"/>
 <fullyQualifiedTypeName name="clear.i_read.activity.EventListActivity"/>
 <fullyQualifiedTypeName name="android.hardware.Camera.Size"/>
-<fullyQualifiedTypeName name="clear.i_read.adapter.EventAdapter"/>
 <fullyQualifiedTypeName name="clear.i_read.R.id"/>
 <fullyQualifiedTypeName name="java.sql.Time"/>
 <fullyQualifiedTypeName name="android.view.View.OnClickListener"/>
@@ -29,10 +28,8 @@
 <fullyQualifiedTypeName name="android.support.v4.app.FragmentManager"/>
 <fullyQualifiedTypeName name="android.util.Log"/>
 <fullyQualifiedTypeName name="android.support.v4.app.Fragment"/>
-<fullyQualifiedTypeName name="com.tyczj.extendedcalendarview.Event"/>
 <fullyQualifiedTypeName name="android.graphics.BitmapRegionDecoder"/>
 <fullyQualifiedTypeName name="android.support.v7.app.AlertDialog"/>
-<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
 <fullyQualifiedTypeName name="android.support.v7.widget.CardView"/>
 <fullyQualifiedTypeName name="android.content.Context"/>
 <fullyQualifiedTypeName name="android.animation.Animator.AnimatorListener"/>
@@ -48,4 +45,7 @@
 <fullyQualifiedTypeName name="clear.i_read.adapter.PrizeAdapter"/>
 <fullyQualifiedTypeName name="android.support.v4.app.ListFragment"/>
 <fullyQualifiedTypeName name="clear.i_read.R"/>
+<fullyQualifiedTypeName name="clear.i_read.adapter.EventAdapter"/>
+<fullyQualifiedTypeName name="android.graphics.Bitmap"/>
+<fullyQualifiedTypeName name="com.tyczj.extendedcalendarview.Event"/>
 </qualifiedTypeNameHistroy>

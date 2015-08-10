@@ -1,12 +1,18 @@
 package clear.i_read.fragment;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.util.TimeZone;
+import java.util.concurrent.TimeUnit;
 
+import com.tyczj.extendedcalendarview.CalendarProvider;
 import com.tyczj.extendedcalendarview.Event;
 
+import android.database.Cursor;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.format.Time;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +27,60 @@ public class EventFragment extends Fragment {
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		//ArrayList<Event> events = (ArrayList<Event>) getActivity().getIntent().getSerializableExtra("events");
+		ArrayList<Event> events = new ArrayList<Event>();
+		Calendar cal = Calendar.getInstance();
+		TimeZone tz = TimeZone.getDefault();
+		int dayJulian = Time.getJulianDay(cal.getTimeInMillis(),
+				TimeUnit.MILLISECONDS.toSeconds(tz.getOffset(cal.getTimeInMillis())));
+		
+		/*
+		Cursor c = getActivity().getContentResolver().query(CalendarProvider.CONTENT_URI,
+				new String[] {
+						CalendarProvider.ID,CalendarProvider.EVENT,
+						CalendarProvider.DESCRIPTION,
+						CalendarProvider.LOCATION,
+						CalendarProvider.START,
+						CalendarProvider.END,
+						CalendarProvider.COLOR,
+						CalendarProvider.PHOTO
+				},"?>="+CalendarProvider.START_DAY+" AND "+ CalendarProvider.END_DAY+" >= ?", 
+				new String[] {
+					String.valueOf(dayJulian),
+					String.valueOf(dayJulian)
+				}, null);
+		*/
+		
+		Cursor c = getActivity().getContentResolver().query(CalendarProvider.CONTENT_URI,
+				new String[] {
+						CalendarProvider.ID,CalendarProvider.EVENT,
+						CalendarProvider.DESCRIPTION,
+						CalendarProvider.LOCATION,
+						CalendarProvider.START,
+						CalendarProvider.END,
+						CalendarProvider.COLOR,
+						CalendarProvider.PHOTO
+				},null,null, CalendarProvider.START_DAY + " DESC");
+		
+		if(c != null){
+			if(c.moveToFirst()){
+				do{
+					Event event = new Event(c.getLong(0),c.getLong(4),c.getLong(5));
+					event.setName(c.getString(1));
+					event.setDescription(c.getString(2));
+					event.setLocation(c.getString(3));
+					event.setColor(c.getInt(6));
+					event.setPhoto(c.getBlob(7));
+					events.add(event);
+				}while(c.moveToNext());	
+			}	
+			c.close();
+		}
+		
 
 		View view = inflater.inflate(R.layout.event_list, container, false);
 
-		ArrayList<Event> events = (ArrayList<Event>) getActivity().getIntent().getSerializableExtra("events");
+		
 		
 		List<EventItem> list = new ArrayList<EventItem>();
 
@@ -36,7 +92,7 @@ public class EventFragment extends Fragment {
 		}
 
 		// adapterのインスタンスを作成
-		EventAdapter adapter = new EventAdapter(getActivity(), R.layout.event_row, list);
+		EventAdapter adapter = new EventAdapter(getActivity(), R.layout.event_row, events);
 
 		ListView lv = (ListView) view.findViewById(R.id.listview);
 		lv.setAdapter(adapter);

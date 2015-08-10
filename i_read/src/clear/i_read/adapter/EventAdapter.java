@@ -2,6 +2,8 @@ package clear.i_read.adapter;
 
 import java.util.List;
 
+import com.tyczj.extendedcalendarview.Event;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,13 +13,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import clear.i_read.R;
 
-public class EventAdapter extends ArrayAdapter<EventItem> {
+public class EventAdapter extends ArrayAdapter<Event> {
 
 	private int resourceId;
-	private List<EventItem> items;
+	private List<Event> items;
 	private LayoutInflater inflater;
 		
-	public EventAdapter(Context context, int resourceId, List<EventItem> items) {
+	public EventAdapter(Context context, int resourceId, List<Event> items) {
 		super(context, resourceId, items);
 
 		this.resourceId = resourceId;
@@ -34,11 +36,11 @@ public class EventAdapter extends ArrayAdapter<EventItem> {
             view = this.inflater.inflate(this.resourceId, null);
         }
         
-        EventItem item = this.items.get(position);
+        Event item = this.items.get(position);
         
         // テキストをセット
 	    TextView appInfoText = (TextView)view.findViewById(R.id.item_text);
-	    appInfoText.setText(item.getText());
+	    appInfoText.setText(item.getStartDate("yyyy/MM/dd"));
 
 	    // アイコンをセット
 	    ImageView appInfoImage = (ImageView)view.findViewById(R.id.item_image);
