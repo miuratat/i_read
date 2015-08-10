@@ -18,6 +18,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import clear.i_read.R;
+import clear.i_read.adapter.PrizeAdapter;
 
 public class PrizeFragment extends Fragment {
 
@@ -43,7 +44,7 @@ public class PrizeFragment extends Fragment {
     	for(int i = 0 ; i < 50; i++) {
     		mDataset.add("A");
     	}
-    	mAdapter = new MyAdapter(mDataset);
+    	mAdapter = new PrizeAdapter(mDataset);
     	AlphaInAnimationAdapter alphaAdapter = new AlphaInAnimationAdapter(mAdapter, 5f);
         SlideInBottomAnimationAdapter scaleAdapter = new SlideInBottomAnimationAdapter(alphaAdapter);
         
